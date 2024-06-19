@@ -1,13 +1,42 @@
-<div class="flex min-h-screen items-center justify-center bg-indigo-900">
-    <div class="flex flex-col gap-y-6 bg-white p-24 rounded-xl shadow">
-        <span class="text-zinc-500">Question 1/4 :</span>
-        <h3 class="text-2xl font-bold">Quels est la superficie du mali ?</h3>
-        <app-reponse [deactive]="repondu" [reponses]="reponses"></app-reponse>
-        <div class="flex justify-end">
-            <button 
-                class="px-6 py-2 rounded-md bg-zinc-900 text-white font-bold" 
-                [ngClass]="{'cursor-not-allowed': !repondu}"
-                [disabled]="!repondu">Suivant</button>
-        </div>
+ <div class="flex flex-col gap-y-6 bg-white p-24 rounded-xl shadow">
+    <span class="text-zinc-500">Question 1/4 :</span>
+
+    <!-- ========== La zone de la reponse ========== -->
+
+    <h3 class="text-2xl font-bold">{{question}}</h3>
+
+    <div class="flex flex-col gap-y-2">
+        <app-reponse
+            [deactive]="repondu"
+            *ngFor="let item of reponses"
+            [reponses]="item"
+            (click)="selectReponse(item)"></app-reponse>
     </div>
+
+    <!-- ========== End ========== -->
+
+    <!-- ========== Commentaire sur la reponse ========== -->
+
+    <div *ngIf="repondu && !resultat"
+        class="bg-red-200 rounded-xl p-3 text-red-700 text-center font-bold">
+        <span>Mauvaise Reponse</span>
+    </div>
+    <div *ngIf="repondu && resultat"
+        class="bg-green-200 rounded-xl p-3 text-green-700 text-center font-bold">
+        <span>Bonne Reponse</span>
+    </div>
+
+    <!-- ========== End ========== -->
+
+    <!-- ========== Bouton Suivant ========== -->
+
+    <div class="flex justify-end">
+        <button
+            class="px-6 py-2 rounded-md bg-zinc-900 text-white font-bold"
+            [ngClass]="{'cursor-not-allowed': !repondu, 'bg-zinc-600': !repondu}"
+            [disabled]="!repondu">Suivant</button>
+    </div>
+
+    <!-- ========== End ========== -->
+
 </div>

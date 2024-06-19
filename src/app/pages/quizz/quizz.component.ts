@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
 })
 export class QuizzComponent {
   repondu: boolean = false;
+  resultat: boolean = false;
+
+  question: string = 'Quelle est la superficie du Mali ?';
   reponses=[
     {
       reponse: 'La superfice est de 500 652 km2',
@@ -30,7 +33,15 @@ export class QuizzComponent {
     },
   ]
 
-  valide(){
-    
+  selectReponse(reponse: any) {
+    this.reponses.forEach((reponse: any) => {
+      reponse.selected = false;
+    });
+    reponse.selected = true;
+    this.repondu = true;
+    if (reponse.isCorrect) {
+      this.resultat = true;
+    }
+    console.log(this.resultat,this.repondu);
   }
 }

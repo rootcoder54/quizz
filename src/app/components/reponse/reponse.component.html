@@ -1,11 +1,7 @@
-<div class="flex flex-col gap-y-2">
-    <button
-        class="bg-white rounded p-3 w-full shadow flex items-center gap-x-3 cursor-pointer hover:bg-zinc-50"
-        *ngFor="let item of reponses"
-        (click)="selectReponse(item)"
-        [ngClass]="selectColor(item)"
-        [disabled]="deactive"
-        >
-        <p>{{item.reponse}}</p>
-    </button>
-</div>
+ <button
+    class="bg-white rounded p-3 w-full shadow flex items-center gap-x-3 cursor-pointer hover:bg-zinc-50"
+    [ngClass]="selectColor()"
+    [disabled]="deactive"
+    >
+    <p>{{reponses?.reponse}}</p>
+</button>
