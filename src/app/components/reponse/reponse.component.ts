@@ -13,14 +13,4 @@ export class ReponseComponent {
     selected: boolean;
   } = { reponse: '', isCorrect: false, selected: false };
 
-  selectColor() {
-    if (this.reponses.selected) {
-      if (this.reponses.isCorrect) {
-        return 'bg-green-400 hover:bg-green-400 text-white';
-      } else {
-        return 'bg-red-500 hover:bg-red-500 text-white';
-      }
-    }
-    return '';
-  }
 }
