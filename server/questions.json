@@ -1,0 +1,170 @@
+[
+    {
+        "question": "Quelle est la capitale de la France ?",
+        "options": [
+            {
+                "text": "Berlin",
+                "isCorrect": false
+            },
+            {
+                "text": "Madrid",
+                "isCorrect": false
+            },
+            {
+                "text": "Paris",
+                "isCorrect": true
+            },
+            {
+                "text": "Rome",
+                "isCorrect": false
+            }
+        ]
+    },
+    {
+        "question": "Qui a écrit 'Les Misérables' ?",
+        "options": [
+            {
+                "text": "Victor Hugo",
+                "isCorrect": true
+            },
+            {
+                "text": "Émile Zola",
+                "isCorrect": false
+            },
+            {
+                "text": "Gustave Flaubert",
+                "isCorrect": false
+            },
+            {
+                "text": "Honoré de Balzac",
+                "isCorrect": false
+            }
+        ]
+    },
+    {
+        "question": "Quel est le plus grand océan du monde ?",
+        "options": [
+            {
+                "text": "Océan Atlantique",
+                "isCorrect": false
+            },
+            {
+                "text": "Océan Pacifique",
+                "isCorrect": true
+            },
+            {
+                "text": "Océan Indien",
+                "isCorrect": false
+            },
+            {
+                "text": "Océan Arctique",
+                "isCorrect": false
+            }
+        ]
+    },
+    {
+        "question": "Quelle est la formule chimique de l'eau ?",
+        "options": [
+            {
+                "text": "H2O",
+                "isCorrect": true
+            },
+            {
+                "text": "CO2",
+                "isCorrect": false
+            },
+            {
+                "text": "O2",
+                "isCorrect": false
+            },
+            {
+                "text": "NaCl",
+                "isCorrect": false
+            }
+        ]
+    },
+    {
+        "question": "En quelle année a eu lieu la Révolution française ?",
+        "options": [
+            {
+                "text": "1776",
+                "isCorrect": false
+            },
+            {
+                "text": "1789",
+                "isCorrect": true
+            },
+            {
+                "text": "1815",
+                "isCorrect": false
+            },
+            {
+                "text": "1848",
+                "isCorrect": false
+            }
+        ]
+    },
+    {
+        "question": "Quel est le symbole chimique de l'or ?",
+        "options": [
+            {
+                "text": "Au",
+                "isCorrect": true
+            },
+            {
+                "text": "Ag",
+                "isCorrect": false
+            },
+            {
+                "text": "Fe",
+                "isCorrect": false
+            },
+            {
+                "text": "Hg",
+                "isCorrect": false
+            }
+        ]
+    },
+    {
+        "question": "Qui a peint 'La Joconde' ?",
+        "options": [
+            {
+                "text": "Vincent van Gogh",
+                "isCorrect": false
+            },
+            {
+                "text": "Claude Monet",
+                "isCorrect": false
+            },
+            {
+                "text": "Pablo Picasso",
+                "isCorrect": false
+            },
+            {
+                "text": "Leonardo da Vinci",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "question": "Quel est le plus long fleuve du monde ?",
+        "options": [
+            {
+                "text": "Amazone",
+                "isCorrect": true
+            },
+            {
+                "text": "Nil",
+                "isCorrect": false
+            },
+            {
+                "text": "Yangtsé",
+                "isCorrect": false
+            },
+            {
+                "text": "Mississippi",
+                "isCorrect": false
+            }
+        ]
+    }
+]
