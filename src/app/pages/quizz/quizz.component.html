@@ -40,7 +40,9 @@
 
         <button
             class="px-6 py-2 rounded-md bg-zinc-900 text-white font-bold"
-            [ngClass]="{'cursor-not-allowed': !repondu, 'bg-zinc-600': !repondu}"
+            [ngClass]="{'cursor-not-allowed': !repondu,
+                        'bg-zinc-600': !repondu,
+                        'cursor-pointer': repondu}"
             (click)="fini()"
             *ngIf="numero === 4"
             [disabled]="!repondu">Fini</button>
