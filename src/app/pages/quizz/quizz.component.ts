@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-quizz',
@@ -10,12 +11,26 @@ export class QuizzComponent implements OnInit{
   resultat: boolean = false;
   numero:number = 1;
   point:number = 0;
+  limit:number = 30;
 
   question: string = 'Quelle est la superficie du Mali ?';
   reponses:any[]=[]
 
+  constructor(private router: Router) { }
+
   ngOnInit() {
     this.loadQuestion();
+    this.time()
+  }
+
+  time(){
+    let timer = setInterval(() => {
+      this.limit = this.limit - 1;
+      if(this.limit == 0){
+        clearInterval(timer);
+        this.fini();
+      }
+    }, 1000);
   }
 
   loadQuestion(){
@@ -63,7 +78,8 @@ export class QuizzComponent implements OnInit{
     this.numero = this.numero + 1;
     this.loadQuestion();
   }
+
   fini(){
-    
+    this.router.navigate(['/home']);
   }
 }
