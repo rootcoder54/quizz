@@ -1,85 +1,70 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { QuestionService } from 'src/app/shared/service/question.service';
 
 @Component({
   selector: 'app-quizz',
   templateUrl: './quizz.component.html',
-  styleUrls: ['./quizz.component.css']
+  styleUrls: ['./quizz.component.css'],
 })
-export class QuizzComponent implements OnInit{
+export class QuizzComponent implements OnInit {
   repondu: boolean = false;
   resultat: boolean = false;
-  numero:number = 1;
-  point:number = 0;
-  limit:number = 30;
+  numero: number = 1;
+  point: number = 0;
+  limit: number = 30;
+  test: any = '';
 
   question: string = 'Quelle est la superficie du Mali ?';
-  reponses:any[]=[]
+  reponses?: { text: string; isCorrect: boolean; select: boolean; }[];
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private questionservice: QuestionService
+  ) {}
 
   ngOnInit() {
-    this.loadQuestion();
-    this.time()
+    this.loadQuestion(this.numero);
+    this.time();
+    this.test=this.questionservice.getById(this.numero);
   }
 
-  time(){
+  time() {
     let timer = setInterval(() => {
       this.limit = this.limit - 1;
-      if(this.limit == 0){
+      if (this.limit == 0) {
         clearInterval(timer);
         this.fini();
       }
     }, 1000);
   }
 
-  loadQuestion(){
-    this.question = this.numero+'- Quelle est la superficie du Mali ?';
-    this.reponses=[
-      {
-        reponse: 'La superfice est de 500 652 km2',
-        isCorrect: false,
-        selected: false,
-      },
-      {
-        reponse: 'La superfice est de 1 241 244 km2',
-        isCorrect: true,
-        selected: false,
-      },
-      {
-        reponse: 'La superfice est de 1 000 520 km2',
-        isCorrect: false,
-        selected: false,
-      },
-      {
-        reponse: 'La superfice est de 1 241 421 km2',
-        isCorrect: false,
-        selected: false,
-      },
-    ]
+  loadQuestion(numero:number) {
+    this.question = this.numero + '-' + this.questionservice.getById(this.numero)?.question;
+    this.reponses = this.questionservice.getById(this.numero)?.options;
   }
 
   selectReponse(reponse: any) {
-    this.reponses.forEach((reponse: any) => {
-      reponse.selected = false;
+    this.reponses?.forEach((reponse) => {
+      reponse.select = false;
     });
-    reponse.selected = true;
+    reponse.select = true;
     this.repondu = true;
     if (reponse.isCorrect) {
       this.resultat = true;
-      this.point=this.point+1;
+      this.point = this.point + 1;
     }
-    console.log(this.resultat,this.repondu);
+    console.log(this.resultat, this.repondu);
   }
 
-  nextQuestion(){
+  nextQuestion() {
     this.resultat = false;
     this.repondu = false;
     this.numero = this.numero + 1;
-    this.loadQuestion();
+    this.loadQuestion(this.numero);
   }
 
-  fini(){
+  fini() {
     this.router.navigate(['/home']);
   }
 }

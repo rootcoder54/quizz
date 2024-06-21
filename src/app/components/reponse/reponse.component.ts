@@ -8,9 +8,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ReponseComponent {
   @Input() deactive: boolean = false;
   @Input() reponses: {
-    reponse: string;
+    text: string;
     isCorrect: boolean;
-    selected: boolean;
-  } = { reponse: '', isCorrect: false, selected: false };
+    select: boolean;
+  } = { text: '', isCorrect: false, select: false };
 
 }
