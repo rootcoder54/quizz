@@ -80,4 +80,10 @@ export class QuizzComponent implements OnInit {
       return "Exellent! Vous avez réussi avec brio";
     }
   }
+  alert(){
+    if(this.limit<15){
+      return true;
+    }
+    return false;
+  }
 }
