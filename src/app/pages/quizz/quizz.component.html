@@ -2,7 +2,6 @@
 
     <div class="flex items-center justify-between px-7">
         <span class="text-zinc-500 font-bold">Question {{numero}}/10 point {{point}}</span>
-        <span class="text-xl font-bold" [ngClass]="{'text-red-600':alert()}" >reste : {{limit}}s</span>
     </div>
 
     <!-- ========== La zone de la reponse ========== -->
@@ -34,7 +33,10 @@
 
     <!-- ========== Bouton Suivant ========== -->
 
-    <div class="flex justify-end">
+    <div class="flex justify-between">
+
+        <span class="text-xl font-bold" [ngClass]="{'text-red-600':alert()}" >Reste : {{limit}}s</span>
+
         <button
             class="px-6 py-2 rounded-md bg-zinc-900 text-white font-bold"
             [ngClass]="{'cursor-not-allowed': !repondu, 'bg-zinc-600': !repondu}"

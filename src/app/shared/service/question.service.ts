@@ -346,6 +346,266 @@ export class QuestionService {
         },
       ],
     },
+    {
+      id: 14,
+      question: 'Quelle est la capitale de l\'Italie ?',
+      options: [
+        {
+          text: 'Berlin',
+          isCorrect: false,
+          select: false,
+        },
+        {
+          text: 'Madrid',
+          isCorrect: false,
+          select: false,
+        },
+        {
+          text: 'Rome',
+          isCorrect: true,
+          select: false,
+        },
+        {
+          text: 'Paris',
+          isCorrect: false,
+          select: false,
+        },
+      ],
+    },
+    {
+      id: 15,
+      question: 'Quel est le plus grand désert du monde ?',
+      options: [
+        {
+          text: 'Sahara',
+          isCorrect: true,
+          select: false,
+        },
+        {
+          text: 'Gobi',
+          isCorrect: false,
+          select: false,
+        },
+        {
+          text: 'Kalahari',
+          isCorrect: false,
+          select: false,
+        },
+        {
+          text: 'Atacama',
+          isCorrect: false,
+          select: false,
+        },
+      ],
+    },
+    {
+      id: 16,
+      question: 'Quelle est la capitale de l\'Allemagne ?',
+      options: [
+        {
+          text: 'Berlin',
+          isCorrect: true,
+          select: false,
+        },
+        {
+          text: 'Madrid',
+          isCorrect: false,
+          select: false,
+        },
+        {
+          text: 'Paris',
+          isCorrect: false,
+          select: false,
+        },
+        {
+          text: 'Rome',
+          isCorrect: false,
+          select: false,
+        },
+      ],
+    },
+    {
+      id: 17,
+      question: 'Quel est le plus grand pays du monde ?',
+      options: [
+        {
+          text: 'Russie',
+          isCorrect: true,
+          select: false,
+        },
+        {
+          text: 'Canada',
+          isCorrect: false,
+          select: false,
+        },
+        {
+          text: 'Chine',
+          isCorrect: false,
+          select: false,
+        },
+        {
+          text: 'États-Unis',
+          isCorrect: false,
+          select: false,
+        },
+      ],
+    },
+    {
+      id: 18,
+      question: 'Quel est le plus grand animal terrestre ?',
+      options: [
+        {
+          text: 'Éléphant',
+          isCorrect: true,
+          select: false,
+        },
+        {
+          text: 'Girafe',
+          isCorrect: false,
+          select: false,
+        },
+        {
+          text: 'Hippopotame',
+          isCorrect: false,
+          select: false,
+        },
+        {
+          text: 'Rhinocéros',
+          isCorrect: false,
+          select: false,
+        },
+      ],
+    },
+    {
+      id: 19,
+      question: 'Quel est le plus grand continent du monde ?',
+      options: [
+        {
+          text: 'Asie',
+          isCorrect: true,
+          select: false,
+        },
+        {
+          text: 'Afrique',
+          isCorrect: false,
+          select: false,
+        },
+        {
+          text: 'Amérique',
+          isCorrect: false,
+          select: false,
+        },
+        {
+          text: 'Europe',
+          isCorrect: false,
+          select: false,
+        },
+      ],
+    },
+    {
+      id: 20,
+      question: 'Quel est le plus grand lac du monde ?',
+      options: [
+        {
+          text: 'Mer Caspienne',
+          isCorrect: true,
+          select: false,
+        },
+        {
+          text: 'lac Supérieur',
+          isCorrect: false,
+          select: false,
+        },
+        {
+          text: 'lac Victoria',
+          isCorrect: false,
+          select: false,
+        },
+        {
+          text: 'lac Baïkal',
+          isCorrect: false,
+          select: false,
+        },
+      ],
+    },
+    {
+      id: 21,
+      question: 'Quel est le plus grand pays d\'Amérique du Sud ?',
+      options: [
+        {
+          text: 'Brésil',
+          isCorrect: true,
+          select: false,
+        },
+        {
+          text: 'Argentine',
+          isCorrect: false,
+          select: false,
+        },
+        {
+          text: 'Colombie',
+          isCorrect: false,
+          select: false,
+        },
+        {
+          text: 'Pérou',
+          isCorrect: false,
+          select: false,
+        },
+      ],
+    },
+    {
+      id: 22,
+      question: 'Quel est le plus grand océan du monde ?',
+      options: [
+        {
+          text: 'Océan Pacifique',
+          isCorrect: true,
+          select: false,
+        },
+        {
+          text: 'Océan Atlantique',
+          isCorrect: false,
+          select: false,
+        },
+        {
+          text: 'Océan Indien',
+          isCorrect: false,
+          select: false,
+        },
+        {
+          text: 'Océan Arctique',
+          isCorrect: false,
+          select: false,
+        },
+      ],
+    },
+    {
+      id: 23,
+      question: 'Quel est le plus grand pays d\'Afrique ?',
+      options: [
+        {
+          text: 'Algérie',
+          isCorrect: true,
+          select: false,
+        },
+        {
+          text: 'République démocratique du Congo',
+          isCorrect: false,
+          select: false,
+        },
+        {
+          text: 'Soudan',
+          isCorrect: false,
+          select: false,
+        },
+        {
+          text: 'Libye',
+          isCorrect: false,
+          select: false,
+        },
+      ],
+    },
   ];
 
   getQuestions() {

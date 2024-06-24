@@ -12,7 +12,7 @@ export class QuizzComponent implements OnInit {
   resultat: boolean = false;
   numero: number = 1;
   point: number = 0;
-  limit: number = 30;
+  limit: number = 50;
   test: any = '';
   finish: boolean = false;
 
@@ -25,7 +25,7 @@ export class QuizzComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.loadQuestion(this.numero);
+    this.loadQuestion();
     this.time();
     this.test=this.questionservice.getById(this.numero);
   }
@@ -40,9 +40,10 @@ export class QuizzComponent implements OnInit {
     }, 1000);
   }
 
-  loadQuestion(numero:number) {
-    this.question = this.numero + '-' + this.questionservice.getById(this.numero)?.question;
-    this.reponses = this.questionservice.getById(this.numero)?.options;
+  loadQuestion() {
+    const random=Math.floor(Math.random() * (23 - 1 + 1)) + 1;
+    this.question = this.numero + '-' + this.questionservice.getById(random)?.question;
+    this.reponses = this.questionservice.getById(random)?.options;
   }
 
   selectReponse(reponse: any) {
@@ -62,7 +63,7 @@ export class QuizzComponent implements OnInit {
     this.resultat = false;
     this.repondu = false;
     this.numero = this.numero + 1;
-    this.loadQuestion(this.numero);
+    this.loadQuestion();
   }
 
   fini() {
@@ -80,10 +81,13 @@ export class QuizzComponent implements OnInit {
       return "Exellent! Vous avez réussi avec brio";
     }
   }
+
+
   alert(){
-    if(this.limit<15){
+    if(this.limit<20){
       return true;
     }
     return false;
   }
+
 }
