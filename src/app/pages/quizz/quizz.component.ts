@@ -14,6 +14,7 @@ export class QuizzComponent implements OnInit {
   point: number = 0;
   limit: number = 30;
   test: any = '';
+  finish: boolean = false;
 
   question: string = 'Quelle est la superficie du Mali ?';
   reponses?: { text: string; isCorrect: boolean; select: boolean; }[];
@@ -65,6 +66,18 @@ export class QuizzComponent implements OnInit {
   }
 
   fini() {
-    this.router.navigate(['/home']);
+    this.finish = true;
+  }
+
+  appreciation(){
+    if(this.point<5){
+      return "Oups! Vous avez échoué";
+    }else if(this.point<7){
+      return "Pas Mal";
+    }else if(this.point<9){
+      return "Bravo! Vous avez réussi";
+    }else{
+      return "Exellent! Vous avez réussi avec brio";
+    }
   }
 }
