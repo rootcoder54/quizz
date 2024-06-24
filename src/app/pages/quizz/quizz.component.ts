@@ -15,6 +15,7 @@ export class QuizzComponent implements OnInit {
   limit: number = 50;
   test: any = '';
   finish: boolean = false;
+  liste:number[]=[];
 
   question: string = 'Quelle est la superficie du Mali ?';
   reponses?: { text: string; isCorrect: boolean; select: boolean; }[];
@@ -25,9 +26,10 @@ export class QuizzComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.loadQuestion();
     this.time();
     this.test=this.questionservice.getById(this.numero);
+    this.listeQuestion();
+    this.loadQuestion();
   }
 
   time() {
@@ -41,7 +43,7 @@ export class QuizzComponent implements OnInit {
   }
 
   loadQuestion() {
-    const random=Math.floor(Math.random() * (23 - 1 + 1)) + 1;
+    const random=this.liste[this.numero-1];
     this.question = this.numero + '-' + this.questionservice.getById(random)?.question;
     this.reponses = this.questionservice.getById(random)?.options;
   }
@@ -88,6 +90,14 @@ export class QuizzComponent implements OnInit {
       return true;
     }
     return false;
+  }
+
+  listeQuestion(){
+    const uniqueNumbers = new Set<number>();
+    while (uniqueNumbers.size < 10) {
+        uniqueNumbers.add(Math.floor(Math.random() * (23 - 1 + 1)) + 1);
+    }
+    this.liste=Array.from(uniqueNumbers);
   }
 
 }
