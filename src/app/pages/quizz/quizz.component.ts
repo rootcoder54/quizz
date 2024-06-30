@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Quizz } from 'src/app/shared/interface/quizz';
 import { QuestionService } from 'src/app/shared/service/question.service';
 
 @Component({
@@ -8,26 +9,25 @@ import { QuestionService } from 'src/app/shared/service/question.service';
   styleUrls: ['./quizz.component.css'],
 })
 export class QuizzComponent implements OnInit {
-  repondu: boolean = false;
-  resultat: boolean = false;
   numero: number = 1;
   point: number = 0;
   limit: number = 50;
-  test: any = '';
   finish: boolean = false;
-  liste:number[]=[];
+  nbreQuestion:number[]=[];
 
-  question: string = 'Quelle est la superficie du Mali ?';
-  reponses?: { text: string; isCorrect: boolean; select: boolean; }[];
+  question:Quizz={
+    question:'',
+    reponses:[],
+    repondu:false,
+    resultat:false,
+  };
 
   constructor(
-    private router: Router,
     private questionservice: QuestionService
   ) {}
 
   ngOnInit() {
     this.time();
-    this.test=this.questionservice.getById(this.numero);
     this.listeQuestion();
     this.loadQuestion();
   }
@@ -43,28 +43,29 @@ export class QuizzComponent implements OnInit {
   }
 
   loadQuestion() {
-    const random=this.liste[this.numero-1];
-    this.question = this.numero + '-' + this.questionservice.getById(random)?.question;
-    this.reponses = this.questionservice.getById(random)?.options;
+    const random=this.nbreQuestion[this.numero-1];
+    this.question={
+      question:this.numero + '-' + this.questionservice.getById(random)?.question,
+      reponses:this.questionservice.getById(random)?.options,
+      repondu:false,
+      resultat:false,    
+    };
   }
 
   selectReponse(reponse: any) {
-    this.reponses?.forEach((reponse) => {
+    this.question?.reponses?.forEach((reponse) => {
       reponse.select = false;
     });
     reponse.select = true;
-    this.repondu = true;
+    this.question.repondu = true;
     if (reponse.isCorrect) {
-      this.resultat = true;
+      this.question.resultat = true;
       this.point = this.point + 1;
     }
-    console.log(this.resultat, this.repondu);
   }
 
   nextQuestion() {
-    this.resultat = false;
-    this.repondu = false;
-    this.numero = this.numero + 1;
+    this.numero++;
     this.loadQuestion();
   }
 
@@ -97,7 +98,7 @@ export class QuizzComponent implements OnInit {
     while (uniqueNumbers.size < 10) {
         uniqueNumbers.add(Math.floor(Math.random() * (23 - 1 + 1)) + 1);
     }
-    this.liste=Array.from(uniqueNumbers);
+    this.nbreQuestion=Array.from(uniqueNumbers);
   }
 
 }
