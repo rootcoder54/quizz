@@ -1,10 +1,12 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const cors = require('cors');
 const fs = require("fs");
 const path = require("path");
 const port = 3000;
 
+app.use(cors());
 app.use(bodyParser.json());
 
 const dataFilePath = path.join(__dirname, "questions.json");

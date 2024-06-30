@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Question } from 'src/app/shared/interface/question';
 import { Quizz } from 'src/app/shared/interface/quizz';
 import { QuestionService } from 'src/app/shared/service/question.service';
 
@@ -44,12 +45,14 @@ export class QuizzComponent implements OnInit {
 
   loadQuestion() {
     const random=this.nbreQuestion[this.numero-1];
-    this.question={
-      question:this.numero + '-' + this.questionservice.getById(random)?.question,
-      reponses:this.questionservice.getById(random)?.options,
-      repondu:false,
-      resultat:false,    
-    };
+    this.questionservice.getByIdq(random).subscribe((data) => {
+      this.question={
+        question:this.numero + '-' + data.question,
+        reponses:data.options,
+        repondu:false,
+        resultat:false,    
+      };
+    });
   }
 
   selectReponse(reponse: any) {
@@ -96,7 +99,7 @@ export class QuizzComponent implements OnInit {
   listeQuestion(){
     const uniqueNumbers = new Set<number>();
     while (uniqueNumbers.size < 10) {
-        uniqueNumbers.add(Math.floor(Math.random() * (23 - 1 + 1)) + 1);
+        uniqueNumbers.add(Math.floor(Math.random() * (13 - 1 + 1)) + 1);
     }
     this.nbreQuestion=Array.from(uniqueNumbers);
   }

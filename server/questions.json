@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "question": "Quelle est la capitale de la France ?",
         "options": [
             {
@@ -21,6 +22,7 @@
         ]
     },
     {
+        "id": 2,
         "question": "Qui a écrit 'Les Misérables' ?",
         "options": [
             {
@@ -42,6 +44,7 @@
         ]
     },
     {
+        "id": 3,
         "question": "Quel est le plus grand océan du monde ?",
         "options": [
             {
@@ -63,6 +66,7 @@
         ]
     },
     {
+        "id": 4,
         "question": "Quelle est la formule chimique de l'eau ?",
         "options": [
             {
@@ -84,6 +88,7 @@
         ]
     },
     {
+        "id": 5,
         "question": "En quelle année a eu lieu la Révolution française ?",
         "options": [
             {
@@ -105,6 +110,7 @@
         ]
     },
     {
+        "id": 6,
         "question": "Quel est le symbole chimique de l'or ?",
         "options": [
             {
@@ -126,6 +132,7 @@
         ]
     },
     {
+        "id": 7,
         "question": "Qui a peint 'La Joconde' ?",
         "options": [
             {
@@ -147,6 +154,7 @@
         ]
     },
     {
+        "id": 8,
         "question": "Quel est le plus long fleuve du monde ?",
         "options": [
             {
@@ -163,6 +171,116 @@
             },
             {
                 "text": "Mississippi",
+                "isCorrect": false
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "question": "Quelle est la capitale de l'Espagne ?",
+        "options": [
+            {
+                "text": "Berlin",
+                "isCorrect": false
+            },
+            {
+                "text": "Madrid",
+                "isCorrect": true
+            },
+            {
+                "text": "Paris",
+                "isCorrect": false
+            },
+            {
+                "text": "Rome",
+                "isCorrect": false
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "question": "Qui a écrit 'Romeo and Juliet' ?",
+        "options": [
+            {
+                "text": "William Shakespeare",
+                "isCorrect": true
+            },
+            {
+                "text": "Jane Austen",
+                "isCorrect": false
+            },
+            {
+                "text": "Charles Dickens",
+                "isCorrect": false
+            },
+            {
+                "text": "Mark Twain",
+                "isCorrect": false
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "question": "Quel est le plus haut sommet du monde ?",
+        "options": [
+            {
+                "text": "Mont Everest",
+                "isCorrect": true
+            },
+            {
+                "text": "Mont Kilimandjaro",
+                "isCorrect": false
+            },
+            {
+                "text": "Mont McKinley",
+                "isCorrect": false
+            },
+            {
+                "text": "Mont Blanc",
+                "isCorrect": false
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "question": "Quelle est la formule chimique du dioxyde de carbone ?",
+        "options": [
+            {
+                "text": "CO2",
+                "isCorrect": true
+            },
+            {
+                "text": "H2O",
+                "isCorrect": false
+            },
+            {
+                "text": "O2",
+                "isCorrect": false
+            },
+            {
+                "text": "NaCl",
+                "isCorrect": false
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "question": "En quelle année a eu lieu la Première Guerre mondiale ?",
+        "options": [
+            {
+                "text": "1914",
+                "isCorrect": true
+            },
+            {
+                "text": "1918",
+                "isCorrect": false
+            },
+            {
+                "text": "1939",
+                "isCorrect": false
+            },
+            {
+                "text": "1945",
                 "isCorrect": false
             }
         ]
