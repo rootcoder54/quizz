@@ -45,7 +45,7 @@ export class QuizzComponent implements OnInit {
 
   loadQuestion() {
     const random=this.nbreQuestion[this.numero-1];
-    this.questionservice.getByIdq(random).subscribe((data) => {
+    this.questionservice.getById(random).subscribe((data) => {
       this.question={
         question:this.numero + '-' + data.question,
         reponses:data.options,
