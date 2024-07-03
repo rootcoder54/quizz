@@ -6,36 +6,13 @@
 
     <!-- ========== La zone de la reponse ========== -->
 
-    <h3 class="text-2xl font-bold">{{question.question}}</h3>
-
-    <div class="flex flex-col gap-y-2">
-        <app-reponse
-            [deactive]="question.repondu"
-            *ngFor="let item of question.reponses"
-            [reponses]="item"
-            (click)="selectReponse(item)"></app-reponse>
-    </div>
-
-    <!-- ========== End ========== -->
-
-    <!-- ========== Commentaire sur la reponse ========== -->
-
-    <div *ngIf="question.repondu && !question.resultat"
-        class="bg-red-200 rounded-xl p-3 text-red-700 text-center font-bold">
-        <span>Mauvaise Reponse</span>
-    </div>
-    <div *ngIf="question.repondu && question.resultat"
-        class="bg-green-200 rounded-xl p-3 text-green-700 text-center font-bold">
-        <span>Bonne Reponse</span>
-    </div>
+    <app-quizz-item [question]="question" [point]="point" [limit]="limit"></app-quizz-item>
 
     <!-- ========== End ========== -->
 
     <!-- ========== Bouton Suivant ========== -->
 
     <div class="flex justify-between">
-
-        <span class="text-xl font-bold" [ngClass]="{'text-red-600':alert()}" >Reste : {{limit}}s</span>
 
         <button
             class="px-6 py-2 rounded-md bg-zinc-900 text-white font-bold"

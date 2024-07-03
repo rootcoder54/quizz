@@ -12,7 +12,7 @@ import { QuestionService } from 'src/app/shared/service/question.service';
 export class QuizzComponent implements OnInit {
   numero: number = 1;
   point: number = 0;
-  limit: number = 50;
+  limit: number = 5000;
   finish: boolean = false;
   nbreQuestion:number[]=[];
 
@@ -28,26 +28,15 @@ export class QuizzComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.time();
     this.listeQuestion();
-    this.loadQuestion();
-  }
-
-  time() {
-    let timer = setInterval(() => {
-      this.limit = this.limit - 1;
-      if (this.limit == 0) {
-        clearInterval(timer);
-        this.fini();
-      }
-    }, 1000);
+    this.loadQuestion()
   }
 
   loadQuestion() {
     const random=this.nbreQuestion[this.numero-1];
     this.questionservice.getById(random).subscribe((data) => {
       this.question={
-        question:this.numero + '-' + data.question,
+        question:'-' + data.question,
         reponses:data.options,
         repondu:false,
         resultat:false,    
@@ -55,21 +44,9 @@ export class QuizzComponent implements OnInit {
     });
   }
 
-  selectReponse(reponse: any) {
-    this.question?.reponses?.forEach((reponse) => {
-      reponse.select = false;
-    });
-    reponse.select = true;
-    this.question.repondu = true;
-    if (reponse.isCorrect) {
-      this.question.resultat = true;
-      this.point = this.point + 1;
-    }
-  }
-
   nextQuestion() {
     this.numero++;
-    this.loadQuestion();
+    this.loadQuestion()
   }
 
   fini() {

@@ -1,0 +1,29 @@
+
+<div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mb-5">
+    <div *ngIf="!question.repondu" class="bg-blue-600 h-2.5 rounded-full" [ngClass]="{'bg-red-600':alert()}" [style.width.%]="width"></div>
+</div>
+  
+
+<h3 class="text-2xl font-bold mb-5">{{question.question}}</h3>
+
+<div class="flex flex-col gap-y-2">
+    <app-reponse
+        [deactive]="question.repondu"
+        *ngFor="let item of question.reponses"
+        [reponses]="item"
+        (click)="selectReponse(item)"></app-reponse>
+</div>
+
+<!-- ========== End ========== -->
+
+<!-- ========== Commentaire sur la reponse ========== -->
+
+<div *ngIf="question.repondu && !question.resultat"
+    class="bg-red-200 rounded-xl p-3 text-red-700 text-center font-bold">
+    <span>Mauvaise Reponse</span>
+</div>
+<div *ngIf="question.repondu && question.resultat"
+    class="bg-green-200 rounded-xl p-3 text-green-700 text-center font-bold">
+    <span>Bonne Reponse</span>
+</div>
+

@@ -12,6 +12,7 @@ import { ReponseComponent } from './components/reponse/reponse.component';
 import { SuccessDirective } from './shared/directives/success.directive';
 import { FalseDirective } from './shared/directives/false.directive';
 import { QuestionService } from './shared/service/question.service';
+import { QuizzItemComponent } from './components/quizz-item/quizz-item.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { QuestionService } from './shared/service/question.service';
     QuizzComponent,
     ReponseComponent,
     SuccessDirective,
-    FalseDirective
+    FalseDirective,
+    QuizzItemComponent
   ],
   imports: [
     BrowserModule,
