@@ -4,9 +4,9 @@ const { readDatabase, writeDatabase } = require('../models/database');
 
 
 router.post('/', (req, res) => {
-  const { point,limit,nombre, user_id } = req.body;
+  const { id, point,limit,nombre, user_id } = req.body;
   const db = readDatabase();
-  const newQuiz = { id: db.quizzes.length + 1, point,limit,nombre, user_id };
+  const newQuiz = { id, point,limit,nombre, user_id };
   db.quizzes.push(newQuiz);
   writeDatabase(db);
   res.json(newQuiz);
