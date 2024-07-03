@@ -9,13 +9,7 @@ import { QuestionService } from 'src/app/shared/service/question.service';
 })
 export class QuizzItemComponent implements OnInit {
 
-  @Input() point: number = 0;
-
-  @Input() limit:number=20000;
-
-  numero: number = 1;
-
-  width: number = 0; 
+  @Input() numero: number = 1;
 
   @Input() question:Quizz={
     question:'',
@@ -32,7 +26,6 @@ export class QuizzItemComponent implements OnInit {
   ) {}
 
   ngOnInit(){
-    this.startProgress()
   }
 
 
@@ -45,34 +38,14 @@ export class QuizzItemComponent implements OnInit {
     this.question.repondu = true;
     if (reponse.isCorrect) {
       this.question.resultat = true;
-
-      this.point = this.point + 1;
     }
   }
 
 
   fini(){
-    this.width=0;
   }
 
-  startProgress() {
-    const startTime = Date.now();
-    const interval = setInterval(() => {
-      const elapsedTime = Date.now() - startTime;
-      this.width = (elapsedTime / this.limit) * 100;
-      if (elapsedTime >= this.limit) {
-        this.width = 100; 
-        clearInterval(interval);
-        this.fini()
-      }
-    }, 50); 
-  }
+  
 
-  alert(){
-    if(this.width>75){
-      return true;
-    }
-    return false;
-  }
 
 }

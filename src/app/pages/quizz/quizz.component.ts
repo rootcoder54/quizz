@@ -12,9 +12,12 @@ import { QuestionService } from 'src/app/shared/service/question.service';
 export class QuizzComponent implements OnInit {
   numero: number = 1;
   point: number = 0;
-  limit: number = 5000;
+  limit: number = 50000;
   finish: boolean = false;
   nbreQuestion:number[]=[];
+  width: number = 0; 
+  taille:number=5;
+
 
   question:Quizz={
     question:'',
@@ -28,15 +31,16 @@ export class QuizzComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.listeQuestion();
-    this.loadQuestion()
+    this.listeQuestion(this.taille);
+    this.loadQuestion();
+    this.startProgress();
   }
 
   loadQuestion() {
     const random=this.nbreQuestion[this.numero-1];
     this.questionservice.getById(random).subscribe((data) => {
       this.question={
-        question:'-' + data.question,
+        question:this.numero+'-' + data.question,
         reponses:data.options,
         repondu:false,
         resultat:false,    
@@ -67,18 +71,31 @@ export class QuizzComponent implements OnInit {
 
 
   alert(){
-    if(this.limit<20){
+    if(this.width>75){
       return true;
     }
     return false;
   }
 
-  listeQuestion(){
+  listeQuestion(taille:number){
     const uniqueNumbers = new Set<number>();
-    while (uniqueNumbers.size < 10) {
+    while (uniqueNumbers.size < taille) {
         uniqueNumbers.add(Math.floor(Math.random() * (13 - 1 + 1)) + 1);
     }
     this.nbreQuestion=Array.from(uniqueNumbers);
+  }
+
+  startProgress() {
+    const startTime = Date.now();
+    const interval = setInterval(() => {
+      const elapsedTime = Date.now() - startTime;
+      this.width = (elapsedTime / this.limit) * 100;
+      if (elapsedTime >= this.limit) {
+        this.width = 100; 
+        clearInterval(interval);
+        this.fini()
+      }
+    }, 50); 
   }
 
 }

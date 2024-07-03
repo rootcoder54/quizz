@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Question } from '../interface/question';
 
 
@@ -21,4 +21,6 @@ export class QuestionService {
   getById(id: number): Observable<Question> {
     return this.http.get<Question>(`${this.apiUrl}/${id}`);
   }
+
+
 }
