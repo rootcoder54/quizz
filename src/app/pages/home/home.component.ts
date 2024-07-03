@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  nbre:number=5;
+  limit:number=5
+  onSubmit(){
+    console.log(this.nbre,this.limit)
+  }
 }
