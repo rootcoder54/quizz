@@ -24,8 +24,13 @@ export class HomeComponent {
       },
       (error) => {
         console.error('Erreur lors de l\'envoi des données :', error);
+      },
+      ()=>{
+        setTimeout(() => {
+          this.router.navigate(['/quizz', uniqueId]);
+        }, 100);
       }
     );
-    this.router.navigate(['/quizz']);
+    
   }
 }
