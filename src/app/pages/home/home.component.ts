@@ -12,11 +12,12 @@ export class HomeComponent {
 
   nbre:number=5;
   limit:number=5;
+  pseudo:string="";
 
   constructor(private quizzService:QuizzService,private router: Router){}
   onSubmit(){
     const uniqueId = uuidv4();
-    const data={id:uniqueId,point:0,limit:this.limit,nombre:this.nbre, user_id:5}
+    const data={id:uniqueId,point:0,limit:this.limit,nombre:this.nbre, pseudo:this.pseudo}
     this.quizzService.create(data).subscribe(
       (response) => {
         console.log('Données envoyées avec succès :', response);
