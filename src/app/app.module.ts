@@ -8,7 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { QuizzComponent } from './pages/quizz/quizz.component';
-import { ReponseComponent } from './components/reponse/reponse.component';
 import { SuccessDirective } from './shared/directives/success.directive';
 import { FalseDirective } from './shared/directives/false.directive';
 import { QuestionService } from './shared/service/question.service';
@@ -21,7 +20,6 @@ import { QuizzService } from './shared/service/quizz.service';
     AppComponent,
     HomeComponent,
     QuizzComponent,
-    ReponseComponent,
     SuccessDirective,
     FalseDirective,
     QuizzItemComponent

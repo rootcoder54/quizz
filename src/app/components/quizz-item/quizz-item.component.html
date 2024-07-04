@@ -1,11 +1,15 @@
 <h3 class="text-2xl font-bold mb-5">{{question.question}}</h3>
 
 <div class="flex flex-col gap-y-2 mb-4">
-    <app-reponse
-        [deactive]="question.repondu"
+    <button
+        class="bg-white rounded p-3 w-full shadow flex items-center gap-x-3 cursor-pointer hover:bg-zinc-50"
         *ngFor="let item of question.reponses"
-        [reponses]="item"
-        (click)="selectReponse(item)"></app-reponse>
+        [appSuccess]="item.isCorrect && item.select"
+        [appFalse]="!item.isCorrect && item.select"
+        [disabled]="question.repondu"
+        (click)="selectReponse(item)">
+        <p>{{item.text}}</p>
+    </button>
 </div>
 
 
