@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Quizz } from '../interface/quizz';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,8 @@ export class QuizzService {
     return this.http.get<any>(`${this.apiUrl}`);
   }
 
-  getQuizzesId(id:string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  getQuizzesId(id:string): Observable<Quizz> {
+    return this.http.get<Quizz>(`${this.apiUrl}/${id}`);
   }
 
   

@@ -11,7 +11,12 @@ export class QuizzItemComponent implements OnInit {
 
   @Input() numero: number = 1;
 
-  @Input() question:Quizz={
+  @Input() question:{
+    question:string;
+    reponses?: { text: string; isCorrect: boolean; select: boolean; }[];
+    repondu: boolean;
+    resultat: boolean;
+}={
     question:'',
     reponses:[],
     repondu:false,

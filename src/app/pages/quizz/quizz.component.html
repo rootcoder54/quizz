@@ -1,7 +1,7 @@
 <div *ngIf="!finish" class="flex flex-col gap-y-6 bg-white p-24 rounded-xl shadow w-[750px]">
 
     <div class="flex items-center justify-between px-7">
-        <span class="text-zinc-500 font-bold">Question {{numero}}/{{taille}} {{nbreQuestion}}</span>
+        <span class="text-zinc-500 font-bold">Question {{numero}}/{{quizz.nombre}} {{quizz.limit}}</span>
     </div>
 
     <!-- ========== La zone de la reponse ========== -->
@@ -21,12 +21,12 @@
         <button
             class="px-6 py-2 rounded-md bg-zinc-900 text-white font-bold"
             (click)="nextQuestion()"
-            *ngIf="numero < taille && question.repondu">Suivant</button>
+            *ngIf="numero < quizz.nombre && question.repondu">Suivant</button>
            
         <button
             class="px-6 py-2 rounded-md bg-zinc-900 text-white font-bold"
             (click)="nextQuestion()"
-            *ngIf="numero < taille && !question.repondu">Passer</button>
+            *ngIf="numero < quizz.nombre && !question.repondu">Passer</button>
 
         <button
             class="px-6 py-2 rounded-md bg-zinc-900 text-white font-bold"
@@ -34,7 +34,7 @@
                         'bg-zinc-600': !question.repondu,
                         'cursor-pointer': question.repondu}"
             (click)="fini()"
-            *ngIf="numero === taille"
+            *ngIf="numero === quizz.nombre"
             [disabled]="!question.repondu">Voir le resultat</button>
 
     </div>
@@ -45,7 +45,7 @@
 
 <div *ngIf="finish" class="flex flex-col gap-y-6 bg-white p-24 rounded-xl shadow w-[450px] text-center">
     <span class="font-bold text-4xl">{{appreciation()}}</span>
-    <span class="text-zinc-500">Votre score est de {{point}}/10</span>
+    <span class="text-zinc-500">Votre score est de {{quizz.point}}/10</span>
     <a href="/home"
         class="px-6 py-2 rounded-md bg-zinc-900 text-white font-bold"
         >Retourner</a>

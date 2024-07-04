@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Question } from 'src/app/shared/interface/question';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Quizz } from 'src/app/shared/interface/quizz';
 import { QuestionService } from 'src/app/shared/service/question.service';
+import { QuizzService } from 'src/app/shared/service/quizz.service';
 
 @Component({
   selector: 'app-quizz',
@@ -10,16 +10,21 @@ import { QuestionService } from 'src/app/shared/service/question.service';
   styleUrls: ['./quizz.component.css'],
 })
 export class QuizzComponent implements OnInit {
+
+  quizz:Quizz={id:"",limit:50,point:0,nombre:5,pseudo:""};
+
   numero: number = 1;
-  point: number = 0;
-  limit: number = 50000;
+
   finish: boolean = false;
   nbreQuestion:number[]=[];
   width: number = 0; 
-  taille:number=5;
 
-
-  question:Quizz={
+  question:{
+    question:string;
+    reponses?: { text: string; isCorrect: boolean; select: boolean; }[];
+    repondu: boolean;
+    resultat: boolean;
+}   ={
     question:'',
     reponses:[],
     repondu:false,
@@ -27,13 +32,32 @@ export class QuizzComponent implements OnInit {
   };
 
   constructor(
-    private questionservice: QuestionService
+    private questionservice: QuestionService, private route: ActivatedRoute,private quizzService:QuizzService,private router: Router
   ) {}
 
   ngOnInit() {
-    this.listeQuestion(this.taille);
-    this.loadQuestion();
-    this.startProgress();
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+      if(id){
+        this.quizzService.getQuizzesId(id).subscribe(d => {
+          this.quizz=d;
+          this.listeQuestion();
+          this.loadQuestion();
+          this.startProgress();
+        })
+      }
+      else{
+        this.router.navigate(['/home']);
+      }
+    });
+  }
+
+  listeQuestion(){
+    const uniqueNumbers = new Set<number>();
+    while (uniqueNumbers.size < this.quizz.nombre) {
+        uniqueNumbers.add(Math.floor(Math.random() * (13)) + 1);
+    }
+    this.nbreQuestion=Array.from(uniqueNumbers);
   }
 
   loadQuestion() {
@@ -59,11 +83,11 @@ export class QuizzComponent implements OnInit {
   }
 
   appreciation(){
-    if(this.point<5){
+    if(this.quizz.point<5){
       return "Oups! Vous avez échoué";
-    }else if(this.point<7){
+    }else if(this.quizz.point<7){
       return "Pas Mal";
-    }else if(this.point<9){
+    }else if(this.quizz.point<9){
       return "Bravo! Vous avez réussi";
     }else{
       return "Exellent! Vous avez réussi avec brio";
@@ -78,20 +102,15 @@ export class QuizzComponent implements OnInit {
     return false;
   }
 
-  listeQuestion(taille:number){
-    const uniqueNumbers = new Set<number>();
-    while (uniqueNumbers.size < taille) {
-        uniqueNumbers.add(Math.floor(Math.random() * (13 - 1 + 1)) + 1);
-    }
-    this.nbreQuestion=Array.from(uniqueNumbers);
-  }
+
 
   startProgress() {
     const startTime = Date.now();
+    const limit=this.quizz.limit *1000
     const interval = setInterval(() => {
       const elapsedTime = Date.now() - startTime;
-      this.width = (elapsedTime / this.limit) * 100;
-      if (elapsedTime >= this.limit) {
+      this.width = (elapsedTime / limit) * 100;
+      if (elapsedTime >= limit) {
         this.width = 100; 
         clearInterval(interval);
         this.fini()

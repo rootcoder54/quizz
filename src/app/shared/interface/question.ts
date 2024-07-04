@@ -3,7 +3,7 @@ export interface Question {
     options:options[];
 }
 
-interface options{
+export interface options{
     text: string;
     isCorrect: boolean;
     select: boolean;
