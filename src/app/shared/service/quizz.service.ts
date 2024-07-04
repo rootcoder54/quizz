@@ -13,8 +13,8 @@ export class QuizzService {
   constructor(private http: HttpClient) { }
 
   
-  getQuizzes(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}`);
+  getQuizzes(): Observable<Quizz[]> {
+    return this.http.get<Quizz[]>(`${this.apiUrl}`);
   }
 
   getQuizzesId(id:string): Observable<Quizz> {

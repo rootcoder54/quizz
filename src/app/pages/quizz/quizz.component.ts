@@ -16,7 +16,7 @@ export class QuizzComponent implements OnInit {
   numero: number = 1;
 
   finish: boolean = false;
-  nbreQuestion:number[]=[];
+  liste:number[]=[];
   width: number = 0; 
 
   question:{
@@ -57,11 +57,11 @@ export class QuizzComponent implements OnInit {
     while (uniqueNumbers.size < this.quizz.nombre) {
         uniqueNumbers.add(Math.floor(Math.random() * (13)) + 1);
     }
-    this.nbreQuestion=Array.from(uniqueNumbers);
+    this.liste=Array.from(uniqueNumbers);
   }
 
   loadQuestion() {
-    const random=this.nbreQuestion[this.numero-1];
+    const random=this.liste[this.numero-1];
     this.questionservice.getById(random).subscribe((data) => {
       this.question={
         question:this.numero+'-' + data.question,

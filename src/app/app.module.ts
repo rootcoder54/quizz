@@ -14,6 +14,7 @@ import { QuestionService } from './shared/service/question.service';
 import { QuizzItemComponent } from './components/quizz-item/quizz-item.component';
 import { FormsModule } from '@angular/forms';
 import { QuizzService } from './shared/service/quizz.service';
+import { HistoriqueComponent } from './pages/historique/historique.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { QuizzService } from './shared/service/quizz.service';
     QuizzComponent,
     SuccessDirective,
     FalseDirective,
-    QuizzItemComponent
+    QuizzItemComponent,
+    HistoriqueComponent
   ],
   imports: [
     BrowserModule,
