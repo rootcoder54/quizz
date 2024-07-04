@@ -4,42 +4,32 @@
         <span class="text-zinc-500 font-bold">Question {{numero}}/{{quizz.nombre}} {{quizz.pseudo}}</span>
     </div>
 
-    <!-- ========== La zone de la reponse ========== -->
+    <!-- ========== La bar de temps ========== -->
 
     <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mb-5">
         <div class="bg-blue-600 h-2.5 rounded-full" [ngClass]="{'bg-red-600':alert()}" [style.width.%]="width"></div>
     </div>
       
-    <app-quizz-item [question]="question" [numero]="numero" ></app-quizz-item>
+    <!-- ========== Composent Question et reponses ========== -->
 
-    <!-- ========== End ========== -->
+    <app-quizz-item [question]="question" ></app-quizz-item>
 
     <!-- ========== Bouton Suivant ========== -->
 
-    <div class="flex justify-between">
-
+    <div class="flex justify-end">
         <button
             class="px-6 py-2 rounded-md bg-zinc-900 text-white font-bold"
             (click)="nextQuestion()"
-            *ngIf="numero < quizz.nombre && question.repondu">Suivant</button>
-           
-        <button
-            class="px-6 py-2 rounded-md bg-zinc-900 text-white font-bold"
-            (click)="nextQuestion()"
-            *ngIf="numero < quizz.nombre && !question.repondu">Passer</button>
+            *ngIf="numero < quizz.nombre">
+            <span *ngIf="question.repondu">Suivant</span>
+            <span *ngIf="!question.repondu">Passer</span>
+        </button>
 
         <button
             class="px-6 py-2 rounded-md bg-zinc-900 text-white font-bold"
-            [ngClass]="{'cursor-not-allowed': !question.repondu,
-                        'bg-zinc-600': !question.repondu,
-                        'cursor-pointer': question.repondu}"
             (click)="fini()"
-            *ngIf="numero === quizz.nombre"
-            [disabled]="!question.repondu">Voir le resultat</button>
-
+            *ngIf="numero === quizz.nombre">Voir le resultat</button>
     </div>
-
-    <!-- ========== End ========== -->
 
 </div>
 

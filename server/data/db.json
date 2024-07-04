@@ -42,6 +42,13 @@
       "limit": 55,
       "nombre": 5,
       "pseudo": "ddddddddddd"
+    },
+    {
+      "id": "77daa3ca-94c1-4ee5-89d8-f1d89d6bf74d",
+      "point": 0,
+      "limit": 50,
+      "nombre": 10,
+      "pseudo": "prof"
     }
   ],
   "questions": [

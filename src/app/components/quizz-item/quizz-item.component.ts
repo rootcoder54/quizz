@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Quizz } from 'src/app/shared/interface/quizz';
 import { QuestionService } from 'src/app/shared/service/question.service';
 
 @Component({
@@ -8,8 +7,6 @@ import { QuestionService } from 'src/app/shared/service/question.service';
   styleUrls: ['./quizz-item.component.css']
 })
 export class QuizzItemComponent implements OnInit {
-
-  @Input() numero: number = 1;
 
   @Input() question:{
     question:string;
@@ -23,17 +20,8 @@ export class QuizzItemComponent implements OnInit {
     resultat:false,
   };
 
-  nbreQuestion:number[]=[];
-
-
-  constructor(
-    private questionservice: QuestionService
-  ) {}
-
   ngOnInit(){
   }
-
-
 
   selectReponse(reponse: any) {
     this.question?.reponses?.forEach((reponse) => {
@@ -45,12 +33,5 @@ export class QuizzItemComponent implements OnInit {
       this.question.resultat = true;
     }
   }
-
-
-  fini(){
-  }
-
-  
-
 
 }

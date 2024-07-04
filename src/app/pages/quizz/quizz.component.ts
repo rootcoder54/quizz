@@ -94,15 +94,12 @@ export class QuizzComponent implements OnInit {
     }
   }
 
-
   alert(){
     if(this.width>75){
       return true;
     }
     return false;
   }
-
-
 
   startProgress() {
     const startTime = Date.now();

@@ -1,8 +1,6 @@
-
-
 <h3 class="text-2xl font-bold mb-5">{{question.question}}</h3>
 
-<div class="flex flex-col gap-y-2">
+<div class="flex flex-col gap-y-2 mb-4">
     <app-reponse
         [deactive]="question.repondu"
         *ngFor="let item of question.reponses"
@@ -10,9 +8,6 @@
         (click)="selectReponse(item)"></app-reponse>
 </div>
 
-<!-- ========== End ========== -->
-
-<!-- ========== Commentaire sur la reponse ========== -->
 
 <div *ngIf="question.repondu && !question.resultat"
     class="bg-red-200 rounded-xl p-3 text-red-700 text-center font-bold">
@@ -22,4 +17,3 @@
     class="bg-green-200 rounded-xl p-3 text-green-700 text-center font-bold">
     <span>Bonne Reponse</span>
 </div>
-
