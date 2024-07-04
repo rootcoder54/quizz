@@ -45,6 +45,7 @@ export class QuizzComponent implements OnInit {
         repondu:false,
         resultat:false,    
       };
+      
     });
   }
 

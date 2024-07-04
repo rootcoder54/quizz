@@ -14,6 +14,7 @@ import { FalseDirective } from './shared/directives/false.directive';
 import { QuestionService } from './shared/service/question.service';
 import { QuizzItemComponent } from './components/quizz-item/quizz-item.component';
 import { FormsModule } from '@angular/forms';
+import { QuizzService } from './shared/service/quizz.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [QuestionService],
+  providers: [QuestionService,QuizzService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

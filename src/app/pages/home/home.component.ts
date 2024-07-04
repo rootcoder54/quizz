@@ -20,11 +20,11 @@ export class HomeComponent {
     this.quizzService.create(data).subscribe(
       (response) => {
         console.log('Données envoyées avec succès :', response);
-        this.router.navigate(['/quizz']);
       },
       (error) => {
         console.error('Erreur lors de l\'envoi des données :', error);
       }
     );
+    this.router.navigate(['/quizz']);
   }
 }
