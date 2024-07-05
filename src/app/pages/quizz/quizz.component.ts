@@ -90,22 +90,14 @@ export class QuizzComponent implements OnInit {
       },
       (error) => {
         console.error('Erreur lors de l\'envoi des données :', error);
+      },
+      () => {
+        this.router.navigate(['resultat',this.quizz.id])
       }
     );
     this.finish = true;
   }
 
-  appreciation(){
-    if(this.quizz.point<5){
-      return "Oups! Vous avez échoué";
-    }else if(this.quizz.point<7){
-      return "Pas Mal";
-    }else if(this.quizz.point<9){
-      return "Bravo! Vous avez réussi";
-    }else{
-      return "Exellent! Vous avez réussi avec brio";
-    }
-  }
 
   alert(){
     if(this.width>75){
