@@ -56,7 +56,7 @@ export class QuizzComponent implements OnInit {
   listeQuestion(){
     const uniqueNumbers = new Set<number>();
     while (uniqueNumbers.size < this.quizz.nombre) {
-        uniqueNumbers.add(Math.floor(Math.random() * (13)) + 1);
+        uniqueNumbers.add(Math.floor(Math.random() * (25)) + 1);
     }
     this.liste=Array.from(uniqueNumbers);
   }

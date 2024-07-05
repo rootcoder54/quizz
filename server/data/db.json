@@ -1,352 +1,274 @@
 {
-  "users": [],
   "quizzes": [
     {
-      "id": "472bdbac-4ad2-40e2-910f-1ff384eb8836",
+      "id": "aa353dc7-ffb8-43b7-880e-fee8f5a0258d",
       "point": 0,
       "limit": 50,
       "nombre": 5,
-      "pseudo": "fof"
-    },
-    {
-      "id": "388f623a-8c17-42c2-967b-52b4e3d68cf3",
-      "point": 0,
-      "limit": 50,
-      "nombre": 5,
-      "pseudo": "bbbb"
-    },
-    {
-      "id": "8095417b-91f8-40cb-93d8-0301fd437086",
-      "point": 0,
-      "limit": 55,
-      "nombre": 5,
-      "pseudo": "ggggg"
-    },
-    {
-      "id": "81df9a41-ac44-47fb-87d8-c4fe3ead66b8",
-      "point": 0,
-      "limit": 55,
-      "nombre": 5,
-      "pseudo": "sdfs"
-    },
-    {
-      "id": "16da9da3-1c53-470f-8f50-5e60cc0486bb",
-      "point": 0,
-      "limit": 5,
-      "nombre": 5,
-      "pseudo": "dddddd"
-    },
-    {
-      "id": "ba926945-578e-4b99-a0cb-bf9645f576c0",
-      "point": 0,
-      "limit": 55,
-      "nombre": 5,
-      "pseudo": "ddddddddddd"
-    },
-    {
-      "id": "77daa3ca-94c1-4ee5-89d8-f1d89d6bf74d",
-      "point": 0,
-      "limit": 50,
-      "nombre": 10,
-      "pseudo": "prof"
-    },
-    {
-      "id": "9873d187-42a3-4ca4-b721-036d38beb368",
-      "point": 0,
-      "limit": 56,
-      "nombre": 5,
-      "pseudo": "lala"
-    },
-    {
-      "id": "70fa3bcc-2ed2-450f-b26b-60f473f09647",
-      "point": 0,
-      "limit": 5,
-      "nombre": 5,
-      "pseudo": "fff"
-    },
-    {
-      "id": "015bfc69-621a-41d8-97a9-c7041d7c9eb2",
-      "point": 0,
-      "limit": 5,
-      "nombre": 5,
-      "pseudo": "hhhhhh"
-    },
-    {
-      "id": "412dda3f-e2e9-4ab3-961b-cc958ef035c1",
-      "point": 0,
-      "limit": 50,
-      "nombre": 5,
-      "pseudo": "kkkkk"
-    },
-    {
-      "id": "b9df838f-677e-4350-9997-d8498e38a59a",
-      "point": 5,
-      "limit": 20,
-      "nombre": 5,
-      "pseudo": "Oui Oui"
+      "pseudo": "test"
     }
   ],
   "questions": [
     {
       "id": 1,
-      "question": "Quelle est la capitale de la France ?",
+      "question": "Quel est le but principal d'Angular?",
       "options": [
         {
-          "text": "Berlin",
-          "isCorrect": false
-        },
-        {
-          "text": "Madrid",
-          "isCorrect": false
-        },
-        {
-          "text": "Paris",
+          "text": "Construire des applications web à page unique",
           "isCorrect": true
         },
         {
-          "text": "Rome",
+          "text": "Développer des systèmes d'exploitation",
+          "isCorrect": false
+        },
+        {
+          "text": "Créer des bases de données",
+          "isCorrect": false
+        },
+        {
+          "text": "Concevoir des images",
           "isCorrect": false
         }
       ]
     },
     {
       "id": 2,
-      "question": "Qui a écrit 'Les Misérables' ?",
+      "question": "Quel langage de programmation Angular utilise-t-il principalement?",
       "options": [
         {
-          "text": "Victor Hugo",
+          "text": "Python",
+          "isCorrect": false
+        },
+        {
+          "text": "Java",
+          "isCorrect": false
+        },
+        {
+          "text": "C++",
+          "isCorrect": false
+        },
+        {
+          "text": "TypeScript",
           "isCorrect": true
-        },
-        {
-          "text": "Émile Zola",
-          "isCorrect": false
-        },
-        {
-          "text": "Gustave Flaubert",
-          "isCorrect": false
-        },
-        {
-          "text": "Honoré de Balzac",
-          "isCorrect": false
         }
       ]
     },
     {
       "id": 3,
-      "question": "Quel est le plus grand océan du monde ?",
+      "question": "Quel décorateur Angular est utilisé pour définir un composant?",
       "options": [
         {
-          "text": "Océan Atlantique",
+          "text": "@NgModule",
           "isCorrect": false
         },
         {
-          "text": "Océan Pacifique",
+          "text": "@Injectable",
+          "isCorrect": false
+        },
+        {
+          "text": "@Component",
           "isCorrect": true
         },
         {
-          "text": "Océan Indien",
-          "isCorrect": false
-        },
-        {
-          "text": "Océan Arctique",
+          "text": "@Directive",
           "isCorrect": false
         }
       ]
     },
     {
       "id": 4,
-      "question": "Quelle est la formule chimique de l'eau ?",
+      "question": "Quelle commande CLI est utilisée pour créer un nouveau projet Angular?",
       "options": [
         {
-          "text": "H2O",
+          "text": "ng create",
+          "isCorrect": false
+        },
+        {
+          "text": "ng init",
+          "isCorrect": false
+        },
+        {
+          "text": "ng start",
+          "isCorrect": false
+        },
+        {
+          "text": "ng new",
           "isCorrect": true
-        },
-        {
-          "text": "CO2",
-          "isCorrect": false
-        },
-        {
-          "text": "O2",
-          "isCorrect": false
-        },
-        {
-          "text": "NaCl",
-          "isCorrect": false
         }
       ]
     },
     {
       "id": 5,
-      "question": "En quelle année a eu lieu la Révolution française ?",
+      "question": "Comment ajoutez-vous des services à un module Angular?",
       "options": [
         {
-          "text": "1776",
+          "text": "En les ajoutant au tableau imports",
           "isCorrect": false
         },
         {
-          "text": "1789",
+          "text": "En les ajoutant au tableau declarations",
+          "isCorrect": false
+        },
+        {
+          "text": "En les déclarant dans le tableau providers",
           "isCorrect": true
         },
         {
-          "text": "1815",
-          "isCorrect": false
-        },
-        {
-          "text": "1848",
+          "text": "En les ajoutant au tableau exports",
           "isCorrect": false
         }
       ]
     },
     {
       "id": 6,
-      "question": "Quel est le symbole chimique de l'or ?",
+      "question": "Quelle est la méthode utilisée pour déclencher la détection des changements dans Angular?",
       "options": [
         {
-          "text": "Au",
+          "text": "detectChanges()",
           "isCorrect": true
         },
         {
-          "text": "Ag",
+          "text": "updateChanges()",
           "isCorrect": false
         },
         {
-          "text": "Fe",
+          "text": "applyChanges()",
           "isCorrect": false
         },
         {
-          "text": "Hg",
+          "text": "checkChanges()",
           "isCorrect": false
         }
       ]
     },
     {
       "id": 7,
-      "question": "Qui a peint 'La Joconde' ?",
+      "question": "Quel mot-clé est utilisé pour créer un service injectable dans Angular?",
       "options": [
         {
-          "text": "Vincent van Gogh",
+          "text": "@Service",
           "isCorrect": false
         },
         {
-          "text": "Claude Monet",
+          "text": "@Provider",
           "isCorrect": false
         },
         {
-          "text": "Pablo Picasso",
-          "isCorrect": false
-        },
-        {
-          "text": "Leonardo da Vinci",
+          "text": "@Injectable",
           "isCorrect": true
+        },
+        {
+          "text": "@Inject",
+          "isCorrect": false
         }
       ]
     },
     {
       "id": 8,
-      "question": "Quel est le plus long fleuve du monde ?",
+      "question": "Quel module Angular est utilisé pour gérer les formulaires?",
       "options": [
         {
-          "text": "Amazone",
+          "text": "ReactiveFormsModule",
+          "isCorrect": false
+        },
+        {
+          "text": "HttpClientModule",
+          "isCorrect": false
+        },
+        {
+          "text": "CommonModule",
+          "isCorrect": false
+        },
+        {
+          "text": "FormsModule",
           "isCorrect": true
-        },
-        {
-          "text": "Nil",
-          "isCorrect": false
-        },
-        {
-          "text": "Yangtsé",
-          "isCorrect": false
-        },
-        {
-          "text": "Mississippi",
-          "isCorrect": false
         }
       ]
     },
     {
       "id": 9,
-      "question": "Quelle est la capitale de l'Espagne ?",
+      "question": "Comment injectez-vous des dépendances dans un composant Angular?",
       "options": [
         {
-          "text": "Berlin",
-          "isCorrect": false
-        },
-        {
-          "text": "Madrid",
+          "text": "En les passant en paramètre du constructeur",
           "isCorrect": true
         },
         {
-          "text": "Paris",
+          "text": "En les déclarant comme propriétés de la classe",
           "isCorrect": false
         },
         {
-          "text": "Rome",
+          "text": "En les ajoutant au tableau imports",
+          "isCorrect": false
+        },
+        {
+          "text": "En les déclarant dans le template",
           "isCorrect": false
         }
       ]
     },
     {
       "id": 10,
-      "question": "Qui a écrit 'Romeo and Juliet' ?",
+      "question": "Quel module Angular est utilisé pour effectuer des requêtes HTTP?",
       "options": [
         {
-          "text": "William Shakespeare",
+          "text": "FormsModule",
+          "isCorrect": false
+        },
+        {
+          "text": "HttpModule",
+          "isCorrect": false
+        },
+        {
+          "text": "RouterModule",
+          "isCorrect": false
+        },
+        {
+          "text": "HttpClientModule",
           "isCorrect": true
-        },
-        {
-          "text": "Jane Austen",
-          "isCorrect": false
-        },
-        {
-          "text": "Charles Dickens",
-          "isCorrect": false
-        },
-        {
-          "text": "Mark Twain",
-          "isCorrect": false
         }
       ]
     },
     {
       "id": 11,
-      "question": "Quel est le plus haut sommet du monde ?",
+      "question": "Quelle directive Angular est utilisée pour afficher un élément basé sur une condition?",
       "options": [
         {
-          "text": "Mont Everest",
+          "text": "*ngFor",
+          "isCorrect": false
+        },
+        {
+          "text": "*ngIf",
           "isCorrect": true
         },
         {
-          "text": "Mont Kilimandjaro",
+          "text": "*ngSwitch",
           "isCorrect": false
         },
         {
-          "text": "Mont McKinley",
-          "isCorrect": false
-        },
-        {
-          "text": "Mont Blanc",
+          "text": "*ngShow",
           "isCorrect": false
         }
       ]
     },
     {
       "id": 12,
-      "question": "Quelle est la formule chimique du dioxyde de carbone ?",
+      "question": "Quel est le cycle de vie d'un composant Angular?",
       "options": [
         {
-          "text": "CO2",
+          "text": "ngOnInit, ngOnChanges, ngOnDestroy",
           "isCorrect": true
         },
         {
-          "text": "H2O",
+          "text": "ngOnStart, ngOnUpdate, ngOnEnd",
           "isCorrect": false
         },
         {
-          "text": "O2",
+          "text": "ngOnLoad, ngOnRender, ngOnUnload",
           "isCorrect": false
         },
         {
-          "text": "NaCl",
+          "text": "ngOnCreate, ngOnModify, ngOnDelete",
           "isCorrect": false
         }
       ]
@@ -369,6 +291,270 @@
         },
         {
           "text": "1945",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "Que signifie HTML ?",
+      "options": [
+        {
+          "text": "Langage de balisage hypertexte",
+          "isCorrect": true
+        },
+        {
+          "text": "Langage de balisage hyperliens",
+          "isCorrect": false
+        },
+        {
+          "text": "Langage de balisage des outils domestiques",
+          "isCorrect": false
+        },
+        {
+          "text": "Langage de balisage des outils hyper",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Que signifie CSS ?",
+      "options": [
+        {
+          "text": "Feuilles de style colorées",
+          "isCorrect": false
+        },
+        {
+          "text": "Feuilles de style informatiques",
+          "isCorrect": false
+        },
+        {
+          "text": "Feuilles de style créatives",
+          "isCorrect": false
+        },
+        {
+          "text": "Feuilles de style en cascade",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "Quelle est la syntaxe correcte pour référencer un script externe appelé 'app.js' ?",
+      "options": [
+        {
+          "text": "<script href='app.js'>",
+          "isCorrect": false
+        },
+        {
+          "text": "<script ref='app.js'>",
+          "isCorrect": false
+        },
+        {
+          "text": "<script src='app.js'>",
+          "isCorrect": true
+        },
+        {
+          "text": "<script name='app.js'>",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "Quelle balise HTML est utilisée pour définir une feuille de style interne ?",
+      "options": [
+        {
+          "text": "<style>",
+          "isCorrect": true
+        },
+        {
+          "text": "<script>",
+          "isCorrect": false
+        },
+        {
+          "text": "<css>",
+          "isCorrect": false
+        },
+        {
+          "text": "<stylesheet>",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "Quelle propriété est utilisée pour changer la couleur de fond en CSS ?",
+      "options": [
+        {
+          "text": "color",
+          "isCorrect": false
+        },
+        {
+          "text": "background-color",
+          "isCorrect": true
+        },
+        {
+          "text": "bg-color",
+          "isCorrect": false
+        },
+        {
+          "text": "background",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "Quelle propriété CSS contrôle la taille du texte ?",
+      "options": [
+        {
+          "text": "text-size",
+          "isCorrect": false
+        },
+        {
+          "text": "font-style",
+          "isCorrect": false
+        },
+        {
+          "text": "text-style",
+          "isCorrect": false
+        },
+        {
+          "text": "font-size",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "Quelle est la syntaxe CSS correcte ?",
+      "options": [
+        {
+          "text": "body {color: black;}",
+          "isCorrect": true
+        },
+        {
+          "text": "{body:color=black;}",
+          "isCorrect": false
+        },
+        {
+          "text": "body:color=black;",
+          "isCorrect": false
+        },
+        {
+          "text": "{body;color:black;}",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "question": "Dans quel élément HTML mettons-nous le JavaScript ?",
+      "options": [
+        {
+          "text": "<javascript>",
+          "isCorrect": false
+        },
+        {
+          "text": "<js>",
+          "isCorrect": false
+        },
+        {
+          "text": "<script>",
+          "isCorrect": true
+        },
+        {
+          "text": "<code>",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "question": "Comment écrivez-vous 'Hello World' dans une boîte d'alerte ?",
+      "options": [
+        {
+          "text": "msg('Hello World');",
+          "isCorrect": false
+        },
+        {
+          "text": "msgBox('Hello World');",
+          "isCorrect": false
+        },
+        {
+          "text": "alertBox('Hello World');",
+          "isCorrect": false
+        },
+        {
+          "text": "alert('Hello World');",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "question": "Comment créez-vous une fonction en JavaScript ?",
+      "options": [
+        {
+          "text": "function myFunction()",
+          "isCorrect": true
+        },
+        {
+          "text": "function:myFunction()",
+          "isCorrect": false
+        },
+        {
+          "text": "function = myFunction()",
+          "isCorrect": false
+        },
+        {
+          "text": "myFunction():function",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "question": "Comment appelez-vous une fonction nommée 'myFunction' ?",
+      "options": [
+        {
+          "text": "call myFunction()",
+          "isCorrect": false
+        },
+        {
+          "text": "call function myFunction()",
+          "isCorrect": false
+        },
+        {
+          "text": "Call.myFunction()",
+          "isCorrect": false
+        },
+        {
+          "text": "myFunction()",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "question": "Comment pouvez-vous ajouter un commentaire en JavaScript ?",
+      "options": [
+        {
+          "text": "// Ceci est un commentaire",
+          "isCorrect": true
+        },
+        {
+          "text": "'Ceci est un commentaire",
+          "isCorrect": false
+        },
+        {
+          "text": "<!-- Ceci est un commentaire -->",
+          "isCorrect": false
+        },
+        {
+          "text": "* Ceci est un commentaire *",
           "isCorrect": false
         }
       ]
