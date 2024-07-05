@@ -30,4 +30,8 @@ export class QuizzService {
   deleteData(id: string): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/${id}`);
   }
+
+  updateQuiz(id: string, data: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${id}`, data);
+  }
 }

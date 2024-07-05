@@ -28,7 +28,7 @@ export class HomeComponent {
       ()=>{
         setTimeout(() => {
           this.router.navigate(['/quizz', uniqueId]);
-        }, 100);
+        }, 500);
       }
     );
     

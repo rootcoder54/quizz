@@ -84,6 +84,14 @@ export class QuizzComponent implements OnInit {
   }
 
   fini() {
+    this.quizzService.updateQuiz(this.quizz.id,this.quizz).subscribe(
+      (response) => {
+        console.log('Données envoyées avec succès :', response);
+      },
+      (error) => {
+        console.error('Erreur lors de l\'envoi des données :', error);
+      }
+    );
     this.finish = true;
   }
 

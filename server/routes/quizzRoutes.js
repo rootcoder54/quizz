@@ -44,4 +44,21 @@ router.delete('/:id', (req, res) => {
   }
 });
 
+router.put('/:id', (req, res) => {
+  const { id } = req.params;
+  const { point, limit, nombre, pseudo } = req.body;
+  const db = readDatabase();
+  const quiz = db.quizzes.find(q => q.id == id);
+  if (quiz) {
+    quiz.point = point;
+    quiz.limit = limit;
+    quiz.nombre = nombre;
+    quiz.pseudo = pseudo;
+    writeDatabase(db);
+    res.json(quiz);
+  } else {
+    res.status(404).json({ error: 'Quiz not found' });
+  }
+});
+
 module.exports = router;
