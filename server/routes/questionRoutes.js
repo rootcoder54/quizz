@@ -3,15 +3,6 @@ const router = express.Router();
 const { readDatabase, writeDatabase } = require('../models/database');
 
 
-router.post('/', (req, res) => {
-  const { question } = req.body;
-  const db = readDatabase();
-  const newQuestion = { id: db.questions.length + 1, question };
-  db.questions.push(newQuestion);
-  writeDatabase(db);
-  res.json(newQuestion);
-});
-
 
 router.get('/', (req, res) => {
   const db = readDatabase();

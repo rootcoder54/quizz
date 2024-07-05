@@ -1,12 +1,5 @@
 {
   "quizzes": [
-    {
-      "id": "aa353dc7-ffb8-43b7-880e-fee8f5a0258d",
-      "point": 0,
-      "limit": 50,
-      "nombre": 5,
-      "pseudo": "test"
-    }
   ],
   "questions": [
     {

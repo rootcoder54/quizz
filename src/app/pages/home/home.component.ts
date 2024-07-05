@@ -10,13 +10,15 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent {
 
+  charge:boolean=false;
   nbre:number=5;
-  limit:number=5;
+  limit:number=50;
   pseudo:string="";
 
   constructor(private quizzService:QuizzService,private router: Router){}
   onSubmit(){
     const uniqueId = uuidv4();
+    this.charge=true;
     const data={id:uniqueId,point:0,limit:this.limit,nombre:this.nbre, pseudo:this.pseudo}
     this.quizzService.create(data).subscribe(
       (response) => {
@@ -28,9 +30,8 @@ export class HomeComponent {
       ()=>{
         setTimeout(() => {
           this.router.navigate(['/quizz', uniqueId]);
-        }, 500);
+        }, 2000);
       }
     );
-    
   }
 }
