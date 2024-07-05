@@ -15,6 +15,7 @@ export class QuizzComponent implements OnInit {
 
   numero: number = 1;
 
+
   finish: boolean = false;
   liste:number[]=[];
   width: number = 0; 
@@ -76,6 +77,10 @@ export class QuizzComponent implements OnInit {
   nextQuestion() {
     this.numero++;
     this.loadQuestion()
+  }
+
+  reponse(){
+    this.quizz.point++
   }
 
   fini() {

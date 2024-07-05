@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { QuestionService } from 'src/app/shared/service/question.service';
 
 @Component({
@@ -20,10 +20,25 @@ export class QuizzItemComponent implements OnInit {
     resultat:false,
   };
 
+  @Output() private select: EventEmitter<any> =
+    new EventEmitter<any>();
+
+    selectReponse(reponse:any) {
+      this.question?.reponses?.forEach((reponse) => {
+        reponse.select = false;
+      });
+      reponse.select = true;
+      this.question.repondu = true;
+      if (reponse.isCorrect) {
+        this.question.resultat = true;
+        this.select.emit(reponse);
+      }
+    }
+
   ngOnInit(){
   }
 
-  selectReponse(reponse: any) {
+  selectReponseq(reponse: any) {
     this.question?.reponses?.forEach((reponse) => {
       reponse.select = false;
     });
