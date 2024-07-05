@@ -10,97 +10,93 @@ import { QuizzService } from 'src/app/shared/service/quizz.service';
   styleUrls: ['./quizz.component.css'],
 })
 export class QuizzComponent implements OnInit {
-
-  quizz:Quizz={id:"",limit:50,point:0,nombre:5,pseudo:""};
+  quizz: Quizz = { id: '', limit: 50, point: 0, nombre: 5, pseudo: '' };
 
   numero: number = 1;
 
+  liste: number[] = [];
+  width: number = 0;
 
-  finish: boolean = false;
-  liste:number[]=[];
-  width: number = 0; 
-
-  question:{
-    question:string;
-    reponses?: { text: string; isCorrect: boolean; select: boolean; }[];
+  question: {
+    question: string;
+    reponses?: { text: string; isCorrect: boolean; select: boolean }[];
     repondu: boolean;
     resultat: boolean;
-}   ={
-    question:'',
-    reponses:[],
-    repondu:false,
-    resultat:false,
+  } = {
+    question: '',
+    reponses: [],
+    repondu: false,
+    resultat: false,
   };
 
   constructor(
-    private questionservice: QuestionService, private route: ActivatedRoute,private quizzService:QuizzService,private router: Router
+    private questionservice: QuestionService,
+    private route: ActivatedRoute,
+    private quizzService: QuizzService,
+    private router: Router
   ) {}
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe((params) => {
       const id = params.get('id');
-      if(id){
-        this.quizzService.getQuizzesId(id).subscribe(d => {
-          this.quizz=d;
+      if (id) {
+        this.quizzService.getQuizzesId(id).subscribe((d) => {
+          this.quizz = d;
           this.listeQuestion();
           this.loadQuestion();
           this.startProgress();
-        })
-      }
-      else{
+        });
+      } else {
         this.router.navigate(['/home']);
       }
     });
   }
 
-  listeQuestion(){
+  listeQuestion() {
     const uniqueNumbers = new Set<number>();
     while (uniqueNumbers.size < this.quizz.nombre) {
-        uniqueNumbers.add(Math.floor(Math.random() * (25)) + 1);
+      uniqueNumbers.add(Math.floor(Math.random() * 25) + 1);
     }
-    this.liste=Array.from(uniqueNumbers);
+    this.liste = Array.from(uniqueNumbers);
   }
 
   loadQuestion() {
-    const random=this.liste[this.numero-1];
+    const random = this.liste[this.numero - 1];
     this.questionservice.getById(random).subscribe((data) => {
-      this.question={
-        question:this.numero+'-' + data.question,
-        reponses:data.options,
-        repondu:false,
-        resultat:false,    
+      this.question = {
+        question: this.numero + '-' + data.question,
+        reponses: data.options,
+        repondu: false,
+        resultat: false,
       };
-      
     });
   }
 
   nextQuestion() {
     this.numero++;
-    this.loadQuestion()
+    this.loadQuestion();
   }
 
-  reponse(){
-    this.quizz.point++
+  reponse() {
+    this.quizz.point++;
   }
 
   fini() {
-    this.quizzService.updateQuiz(this.quizz.id,this.quizz).subscribe(
+    this.quizzService.updateQuiz(this.quizz.id, this.quizz).subscribe(
       (response) => {
         console.log('Données envoyées avec succès :', response);
       },
       (error) => {
-        console.error('Erreur lors de l\'envoi des données :', error);
+        console.error("Erreur lors de l'envoi des données :", error);
       },
       () => {
-        this.router.navigate(['resultat',this.quizz.id])
+        this.router.navigate(['resultat', this.quizz.id]);
       }
     );
-    this.finish = true;
   }
 
-
-  alert(){
-    if(this.width>75){
+  alert() {
+    if (this.width > 75) {
       return true;
     }
     return false;
@@ -108,16 +104,15 @@ export class QuizzComponent implements OnInit {
 
   startProgress() {
     const startTime = Date.now();
-    const limit=this.quizz.limit *1000
+    const limit = this.quizz.limit * 1000;
     const interval = setInterval(() => {
       const elapsedTime = Date.now() - startTime;
       this.width = (elapsedTime / limit) * 100;
       if (elapsedTime >= limit) {
-        this.width = 100; 
+        this.width = 100;
         clearInterval(interval);
-        this.fini()
+        this.fini();
       }
-    }, 50); 
+    }, 50);
   }
-
 }

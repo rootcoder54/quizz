@@ -5,16 +5,15 @@ import { QuizzService } from 'src/app/shared/service/quizz.service';
 @Component({
   selector: 'app-historique',
   templateUrl: './historique.component.html',
-  styleUrls: ['./historique.component.css']
+  styleUrls: ['./historique.component.css'],
 })
 export class HistoriqueComponent implements OnInit {
+  quizz: Quizz[] = [];
+  constructor(private quizzService: QuizzService) {}
 
-  quizz:Quizz[]=[];
-  constructor(private quizzService:QuizzService){}
-
-  ngOnInit(){
-    this.quizzService.getQuizzes().subscribe(q => {
-      this.quizz=q;
-    })
+  ngOnInit() {
+    this.quizzService.getQuizzes().subscribe((q) => {
+      this.quizz = q;
+    });
   }
 }

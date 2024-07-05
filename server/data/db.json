@@ -6,6 +6,13 @@
       "limit": 50,
       "nombre": 5,
       "pseudo": "fof"
+    },
+    {
+      "id": "b9702afe-4164-45a4-8815-f0a68b7d6b55",
+      "point": 5,
+      "limit": 30,
+      "nombre": 5,
+      "pseudo": "mm"
     }
   ],
   "questions": [

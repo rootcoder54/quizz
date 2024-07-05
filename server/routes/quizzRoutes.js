@@ -26,7 +26,7 @@ router.get('/:id', (req, res) => {
   if (quiz) {
     res.json(quiz);
   } else {
-    res.status(404).json({ error: 'Quiz not found' });
+    res.status(404).json({ error: 'Quiz non trouvé' });
   }
 });
 
@@ -40,7 +40,7 @@ router.delete('/:id', (req, res) => {
     writeDatabase(db);
     res.json(deletedQuiz);
   } else {
-    res.status(404).json({ error: 'Quiz not found' });
+    res.status(404).json({ error: 'Quiz non trouvé' });
   }
 });
 

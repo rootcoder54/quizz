@@ -18,7 +18,7 @@ router.get('/:id', (req, res) => {
     if (question) {
       res.json(question);
     } else {
-      res.status(404).json({ error: 'Quiz not found' });
+      res.status(404).json({ error: 'Question non trouvé' });
     }
   });
 
@@ -34,7 +34,7 @@ router.delete('/:id', (req, res) => {
     writeDatabase(db);
     res.json(deletedQuestion);
   } else {
-    res.status(404).json({ error: 'Question not found' });
+    res.status(404).json({ error: 'Question non trouvé' });
   }
 });
 
